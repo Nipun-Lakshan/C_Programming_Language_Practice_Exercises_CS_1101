@@ -1,4 +1,4 @@
-// CS1101 - Day 02 - Exercise 06
+// CS1101 - Day 02 - Exercise 07
 #include <stdio.h>
 // include <stdio.h> # Missing # at the Line Start!
 int main()
