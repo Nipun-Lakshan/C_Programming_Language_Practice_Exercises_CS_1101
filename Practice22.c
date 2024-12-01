@@ -3,20 +3,20 @@
 #include <stdio.h>
 int main()
 {
-    int a = 10;
-    int b = 15;
+    float a = 10;
+    float b = 15;
 
-    int sum = a + b;
+    float sum = a + b;
     printf("\na + b = ");
-    printf("%d", sum);
+    printf("%.0f", sum);
 
-    int sub = a - b;
+    float sub = a - b;
     printf("\na - b = ");
-    printf("%d", sub);
+    printf("%.0f", sub);
 
-    int mul = a * b;
+    float mul = a * b;
     printf("\na * b = ");
-    printf("%d", mul);
+    printf("%.0f", mul);
 
     float div = a / b;
     printf("\na / b = ");
