@@ -24,8 +24,18 @@ int main()
 
     printf("\n");
 
-    float result = -b / (float)a;
-    printf("The value of x in the equation ax + b = 0               : %.2f", result);
+    if (a == 0)
+
+    {
+        printf("No Solution!");
+    }
+
+    else
+
+    {
+        float result = -b / (float)a;
+        printf("The value of x in the equation ax + b = 0               : %.2f", result);
+    }
 
     printf("\n");
 
