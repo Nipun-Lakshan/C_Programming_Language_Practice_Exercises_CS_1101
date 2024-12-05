@@ -17,7 +17,9 @@ int main()
     printf("Enter Number 02: ");
     scanf("%f", &num2);
 
-    num1 >= num2 ? printf("\nOf the two, the larger is %.2f\n", num1) : printf("\nOf the two, the larger is %.2f\n", num2);
+    num1 >= num2 ? printf("\nOf the two, the larger is %.2f", num1) : printf("\nOf the two, the larger is %.2f", num2);
+
+    printf("\nOf the two, the larger is %.2f\n", num1 > num2 ? num1 : num2);
 
     printf("=====================================================\n");
 
