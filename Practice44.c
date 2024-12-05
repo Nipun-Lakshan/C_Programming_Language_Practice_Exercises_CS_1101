@@ -20,8 +20,7 @@ int main()
 
     double radius = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
 
-    radius > 8 ? printf("You are safe range!") : printf("You are not in safe range!");
-
+    radius > 8 ? printf("You are in a safe range!") : printf("You are not in a safe range!");
     printf("\n================================================================================\n");
 
     return 0;
