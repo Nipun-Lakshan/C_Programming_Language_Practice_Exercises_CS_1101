@@ -1,4 +1,4 @@
-// CS1101 - Day 03 - Exercise 01
+// CS1101 - Day 03 - Exercise 02
 #include <stdio.h>
 int main()
 {
