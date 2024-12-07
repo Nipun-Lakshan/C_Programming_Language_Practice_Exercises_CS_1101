@@ -1,45 +1,71 @@
+// Week 04 - CS1101 - Practice Exercise 01
+
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
 
 int main()
+
 {
-    struct tm date1 = {0}, date2 = {0};
-    time_t time1, time2;
-    double seconds_diff;
 
-    int year1, month1, day1, year2, month2, day2;
+    // Method 01:- Print Numbers from 1 to 5.
 
-    // Read the first date
-    printf("Enter the first date (YYYY/MM/DD): ");
-    scanf("%d/%d/%d", &year1, &month1, &day1);
+    printf("\n======================================\n");
+    printf("Method 01:- Print Numbers from 1 to 5.\n");
+    printf("======================================\n\n");
 
-    // Read the second date
-    printf("Enter the second date (YYYY/MM/DD): ");
-    scanf("%d/%d/%d", &year2, &month2, &day2);
+    printf("%d ", 1);
+    printf("%d ", 2);
+    printf("%d ", 3);
+    printf("%d ", 4);
+    printf("%d \n", 5);
 
-    // Set the first date
-    date1.tm_year = year1 - 1900; // tm_year is years since 1900
-    date1.tm_mon = month1 - 1;    // tm_mon is 0-based (0 = January)
-    date1.tm_mday = day1;
+    // Method 02:- Print Numbers from 1 to 5.
 
-    // Set the second date
-    date2.tm_year = year2 - 1900;
-    date2.tm_mon = month2 - 1;
-    date2.tm_mday = day2;
+    printf("\n======================================\n");
+    printf("Method 02:- Print Numbers from 1 to 5.\n");
+    printf("======================================\n\n");
 
-    // Convert both dates to time_t
-    time1 = mktime(&date1);
-    time2 = mktime(&date2);
+    int num = 1;
 
-    // Calculate the difference in seconds
-    seconds_diff = difftime(time1, time2);
+    while (num <= 5)
+    {
+        printf("%d ", num);
+        num++;
+    }
 
-    // Convert seconds difference to days
-    int days_diff = seconds_diff / (60 * 60 * 24);
+    printf("\n\n");
 
-    // Output the result
-    printf("Difference in days: %d\n", abs(days_diff));
+    // Method 02:- Print Numbers from 1 to 5.
+
+    printf("\n======================================\n");
+    printf("Method 03:- Print Numbers from 1 to 5000.\n");
+    printf("======================================\n\n");
+
+    int temp = 1;
+
+    while (temp <= 100)
+    {
+
+        if (temp < 10)
+        {
+            printf("0%d ", temp);
+        }
+
+        else if (temp == 10)
+        {
+            printf("%d ", temp);
+        }
+
+        else
+        {
+            printf("%d ", temp);
+        }
+
+        temp++;
+
+        ((temp - 1) % 10 == 0) ? printf("\n") : printf("");
+    }
+
+    printf("\n\n");
 
     return 0;
 }

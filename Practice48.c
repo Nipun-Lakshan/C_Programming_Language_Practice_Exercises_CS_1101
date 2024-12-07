@@ -36,6 +36,15 @@ int main()
     int day1;
     int day2;
 
+    int prorated_slab_30;
+    int prorated_slab_60;
+    int prorated_slab_90;
+    int prorated_slab_120;
+    int prorated_slab_180;
+
+    float fixed_charge_for_the_month;
+    float total_bill;
+
     // Requesting Meter Reading from Users with Reading Dates
 
     printf("Enter the Meter Reading for This month           :- ");
@@ -45,7 +54,7 @@ int main()
     printf("Enter the Meter Reading for Last Month           :- ");
     scanf("%d", &last_month_meter_reading);
     printf("Enter Date (YYYY/MM/DD) for Last Month's Reading :- ");
-    scanf("%d/%d/%d", &year1, &month1, &day2);
+    scanf("%d/%d/%d", &year2, &month2, &day2);
     printf("\n");
 
     // Calculate the Difference of Dates
@@ -77,32 +86,32 @@ int main()
 
     no_of_units_consumed_per_month = this_month_meter_reading - last_month_meter_reading;
 
-    if (difference_of_days == 30 && no_of_units_consumed_per_month > 60)
+    if (difference_of_days < 30 && no_of_units_consumed_per_month > (60 * difference_of_days / 30))
     {
         consumption_category = 1;
     }
 
-    else if (difference_of_days == 30 & no_of_units_consumed_per_month <= 60)
+    else if (difference_of_days < 30 && no_of_units_consumed_per_month <= (60 * difference_of_days / 30))
     {
         consumption_category = 0;
     }
 
-    else if (difference_of_days < 30 && no_of_units_consumed_per_month > 58)
+    else if (difference_of_days > 30 && no_of_units_consumed_per_month > (60 * difference_of_days / 30))
     {
         consumption_category = 1;
     }
 
-    else if (difference_of_days < 30 & no_of_units_consumed_per_month <= 58)
+    else if (difference_of_days > 30 && no_of_units_consumed_per_month <= (60 * difference_of_days / 30))
     {
         consumption_category = 0;
     }
 
-    else if (difference_of_days > 30 && no_of_units_consumed_per_month > 62)
+    else if (difference_of_days == 30 && no_of_units_consumed_per_month > 60)
     {
         consumption_category = 1;
     }
 
-    else if (difference_of_days > 30 & no_of_units_consumed_per_month <= 62)
+    else if (difference_of_days == 30 && no_of_units_consumed_per_month <= 60)
     {
         consumption_category = 0;
     }
@@ -120,44 +129,32 @@ int main()
         printf("Category 01\n\n");
     }
 
-    // Calculate the Tariff for Category 01 & Category 02 when difference of Days is 30
+    // Calculate the Tariff for Category 01 & Category 02 when difference of Days is 30 & Fixed Charge.
 
     if (consumption_category == 1 && difference_of_days == 30)
     {
-        if (no_of_units_consumed_per_month < 90)
+        if (no_of_units_consumed_per_month <= 90)
         {
             bill = 60 * 15;
             no_of_units_consumed_per_month -= 60;
             bill = bill + (no_of_units_consumed_per_month * 18);
+            fixed_charge_for_the_month = 400;
         }
 
-        else if (no_of_units_consumed_per_month == 90)
-        {
-            bill = (60 * 15) + (30 * 18);
-        }
-
-        else if (no_of_units_consumed_per_month < 120)
+        else if (no_of_units_consumed_per_month <= 120)
         {
             bill = (60 * 15) + (30 * 18);
             no_of_units_consumed_per_month -= 90;
             bill = bill + (no_of_units_consumed_per_month * 30);
+            fixed_charge_for_the_month = 1000;
         }
 
-        else if (no_of_units_consumed_per_month == 120)
-        {
-            bill = (60 * 15) + (30 * 18) + (30 * 30);
-        }
-
-        else if (no_of_units_consumed_per_month < 180)
+        else if (no_of_units_consumed_per_month <= 180)
         {
             bill = (60 * 15) + (30 * 18) + (30 * 30);
             no_of_units_consumed_per_month -= 120;
             bill = bill + (no_of_units_consumed_per_month * 42);
-        }
-
-        else if (no_of_units_consumed_per_month == 180)
-        {
-            bill = (60 * 15) + (30 * 18) + (30 * 30) + (60 * 42);
+            fixed_charge_for_the_month = 1500;
         }
 
         else
@@ -165,6 +162,7 @@ int main()
             bill = (60 * 15) + (30 * 18) + (30 * 30) + (60 * 42);
             no_of_units_consumed_per_month -= 180;
             bill = bill + (no_of_units_consumed_per_month * 65);
+            fixed_charge_for_the_month = 2000;
         }
     }
 
@@ -173,6 +171,7 @@ int main()
         if (no_of_units_consumed_per_month <= 30)
         {
             bill = (no_of_units_consumed_per_month * 6);
+            fixed_charge_for_the_month = 100;
         }
 
         else
@@ -180,84 +179,101 @@ int main()
             bill = (30 * 6);
             no_of_units_consumed_per_month -= 30;
             bill = bill + (no_of_units_consumed_per_month * 9);
+            fixed_charge_for_the_month = 250;
         }
     }
 
-    // Calculate the Tariff for Category 01 & Category 02 when difference of Days is above 30.
+    // Calculate the Tariff for Category 01 & Category 02 when difference of Days is less than 30 or more than 30
 
-    int temp_units = 0;
+    if (difference_of_days != 30)
 
-    if (consumption_category == 1 && difference_of_days > 30)
     {
-        if (no_of_units_consumed_per_month < 90)
+
+        prorated_slab_60 = (60 * difference_of_days) / 30;
+        prorated_slab_90 = (90 * difference_of_days) / 30;
+        prorated_slab_120 = (120 * difference_of_days) / 30;
+        prorated_slab_180 = (180 * difference_of_days) / 30;
+
+        if (consumption_category == 1)
         {
-            temp_units = (60 * difference_of_days) / 30;
-            if (temp_units > no_of_units_consumed_per_month)
+
+            if (no_of_units_consumed_per_month <= prorated_slab_90)
             {
+                bill = prorated_slab_60 * 15;
+                no_of_units_consumed_per_month -= prorated_slab_60;
+                bill += (no_of_units_consumed_per_month * 18);
+                fixed_charge_for_the_month = 400;
             }
-            // bill = 60 * 15;
-            // no_of_units_consumed_per_month -= 60;
-            // bill = bill + (no_of_units_consumed_per_month * 18);
+            else if (no_of_units_consumed_per_month <= prorated_slab_120)
+            {
+                bill = (prorated_slab_60 * 15) + ((prorated_slab_90 - prorated_slab_60) * 18);
+                no_of_units_consumed_per_month -= prorated_slab_90;
+                bill += (no_of_units_consumed_per_month * 30);
+                fixed_charge_for_the_month = 1000;
+            }
+            else if (no_of_units_consumed_per_month <= prorated_slab_180)
+            {
+                bill = (prorated_slab_60 * 15) + ((prorated_slab_90 - prorated_slab_60) * 18) +
+                       ((prorated_slab_120 - prorated_slab_90) * 30);
+                no_of_units_consumed_per_month -= prorated_slab_120;
+                bill += (no_of_units_consumed_per_month * 42);
+                fixed_charge_for_the_month = 1500;
+            }
+            else
+            {
+                bill = (prorated_slab_60 * 15) + ((prorated_slab_90 - prorated_slab_60) * 18) +
+                       ((prorated_slab_120 - prorated_slab_90) * 30) +
+                       ((prorated_slab_180 - prorated_slab_120) * 42);
+                no_of_units_consumed_per_month -= prorated_slab_180;
+                bill += (no_of_units_consumed_per_month * 65);
+                fixed_charge_for_the_month = 2000;
+            }
         }
 
-        else if (no_of_units_consumed_per_month == 90)
+        else if (consumption_category == 0)
         {
-            bill = (60 * 15) + (30 * 18);
-        }
 
-        else if (no_of_units_consumed_per_month < 120)
-        {
-            bill = (60 * 15) + (30 * 18);
-            no_of_units_consumed_per_month -= 90;
-            bill = bill + (no_of_units_consumed_per_month * 30);
-        }
+            prorated_slab_30 = (30 * 30) / difference_of_days;
 
-        else if (no_of_units_consumed_per_month == 120)
-        {
-            bill = (60 * 15) + (30 * 18) + (30 * 30);
-        }
-
-        else if (no_of_units_consumed_per_month < 180)
-        {
-            bill = (60 * 15) + (30 * 18) + (30 * 30);
-            no_of_units_consumed_per_month -= 120;
-            bill = bill + (no_of_units_consumed_per_month * 42);
-        }
-
-        else if (no_of_units_consumed_per_month == 180)
-        {
-            bill = (60 * 15) + (30 * 18) + (30 * 30) + (60 * 42);
-        }
-
-        else
-        {
-            bill = (60 * 15) + (30 * 18) + (30 * 30) + (60 * 42);
-            no_of_units_consumed_per_month -= 180;
-            bill = bill + (no_of_units_consumed_per_month * 65);
+            if (no_of_units_consumed_per_month <= prorated_slab_30)
+            {
+                bill = no_of_units_consumed_per_month * 6;
+                fixed_charge_for_the_month = 100;
+            }
+            else
+            {
+                bill = (prorated_slab_30 * 6);
+                no_of_units_consumed_per_month -= prorated_slab_30;
+                bill += (no_of_units_consumed_per_month * 9);
+                fixed_charge_for_the_month = 250;
+            }
         }
     }
 
-    else if (consumption_category == 0 && difference_of_days == 30)
+    // Calculate the Fixed Charge when Billing Days are over or equal to 54.
+
+    if (difference_of_days >= 54)
     {
-        if (no_of_units_consumed_per_month <= 30)
-        {
-            bill = (no_of_units_consumed_per_month * 6);
-        }
-
-        else
-        {
-            bill = (30 * 6);
-            no_of_units_consumed_per_month -= 30;
-            bill = bill + (no_of_units_consumed_per_month * 9);
-        }
+        fixed_charge_for_the_month *= ((float)difference_of_days / (float)30);
     }
 
-    printf("The Bill Amount for This Month         :- Rs. %d.00\n", bill);
+    // Print the Bill Amount for the Month
+
+    printf("The Bill Amount for This Month                   :- Rs. %d.00\n", bill);
+
+    // Print the Fixed Charge for the Month
+
+    printf("The Fixed Charge Amount for This Month           :- Rs. %.2f\n", fixed_charge_for_the_month);
 
     // Calculate the Tax Amount
 
-    tax = (float)bill * 0.025641;
-    printf("The Tax Amount for This Month          :- Rs. %.2f\n", tax);
+    tax = (float)(bill + fixed_charge_for_the_month) * 0.025641;
+    printf("The Tax Amount for This Month                    :- Rs. %.2f\n\n", tax);
+
+    // Calculate the Total Bill Amount
+
+    total_bill = (float)bill + (float)fixed_charge_for_the_month + tax;
+    printf("The Total Bill Amount for This Month             :- Rs. %.2f\n", total_bill);
 
     return 0;
 }
