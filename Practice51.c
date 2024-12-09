@@ -223,7 +223,7 @@ int main()
 
     else if (GPA >= 2.00)
     {
-        printf("Genaral Pass\n");
+        printf("General Pass\n");
     }
 
     else
