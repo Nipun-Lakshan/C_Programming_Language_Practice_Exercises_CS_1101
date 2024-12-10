@@ -19,7 +19,7 @@ int main()
     int month = 0;     // 1 - 12 for January to December
     int day = 0;       // Date of the Month
 
-    printf("Enter your NIC number :- "); // Take 12 Digits of the NIC
+    printf("Enter your NIC number : "); // Take 12 Digits of the NIC
     scanf("%4d%3d%5d", &year, &dayOfYear, &rest);
 
     // Check Gender
@@ -108,15 +108,15 @@ int main()
 
     if (gender == 1)
     {
-        printf("Gender                :- Male\n");
+        printf("Gender                : Male\n");
     }
 
     else if (gender == 0)
     {
-        printf("Gender                :- Female\n");
+        printf("Gender                : Female\n");
     }
 
-    printf("DOB                   :- %d/%d/%d\n", year, month, day);
+    printf("DOB                   : %d/%d/%d\n", year, month, day);
 
     printf("\n=========================================\n");
 
