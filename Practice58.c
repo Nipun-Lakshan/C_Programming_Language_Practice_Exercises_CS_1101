@@ -1,4 +1,4 @@
-// Smallest Number
+// Smallest Number from Three inputs
 
 #include <stdio.h>
 
