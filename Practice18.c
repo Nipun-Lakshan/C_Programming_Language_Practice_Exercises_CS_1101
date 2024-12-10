@@ -6,6 +6,8 @@ int main()
     char letter = 'a';
     float pi = 3.14;
     double value = 1.2345678900;
-    printf("\nNumber = %d, Letter = %c, PI = %1.2f, Value = %1.10lf", number, letter, pi, value);
+    printf("\n");
+    printf("Number = %d, Letter = %c, PI = %1.2f, Value = %1.10lf", number, letter, pi, value);
+    printf("\n");
     return 0;
 }
