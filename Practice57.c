@@ -1,4 +1,4 @@
-// Smallest Number
+// Largest Number from Two Inputs
 
 #include <stdio.h>
 

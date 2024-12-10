@@ -1,42 +1,58 @@
-// Smallest Number from Three inputs
+// Largest Number from three inputs
 
 #include <stdio.h>
 
 int main()
 {
+
     // Header String Formatting
 
     printf("\n===============\n");
-    printf("Smallest Number\n");
+    printf("Largest Number\n");
     printf("===============\n\n");
 
     // Declaring Variables
 
-    float num1;
-    float num2;
+    float num1, num2, num3, max;
 
-    // Requesting the values for num1 and num2 from user
+    // Requesting the values for num1, num2, and num3 from the user
 
-    printf("Enter number 01 : ");
+    printf("Enter number 01: ");
     scanf("%f", &num1);
-    printf("Enter number 02 : ");
+    printf("Enter number 02: ");
     scanf("%f", &num2);
+    printf("Enter number 03: ");
+    scanf("%f", &num3);
 
-    // Calculate the Largest Number and Print it
+    printf("The input numbers are %.2f, %.2f, and %.2f\n", num1, num2, num3);
 
-    if (num1 > num2)
+    // Check if all numbers are equal
+
+    if (num1 == num2 && num2 == num3)
     {
-        printf("\nOf the two, the larger is %.2f\n", num1);
-    }
 
-    else if (num1 == num2)
-    {
-        printf("\nThe inserted two numbers are equal!\n");
+        printf("The inserted three numbers are equal!\n");
     }
-
     else
     {
-        printf("\nOf the two, the larger is %.2f\n", num2);
+
+        // Determine the largest number
+
+        if (num1 > num2)
+        {
+            max = num1;
+        }
+        else
+        {
+            max = num2;
+        }
+
+        if (num3 > max)
+        {
+            max = num3;
+        }
+
+        printf("Of the three, the largest is %.2f\n", max);
     }
 
     return 0;
