@@ -12,7 +12,7 @@ int main()
     // Header String Formatting
 
     printf("\n===============");
-    printf("\nDays in a month");
+    printf("\nDays in a Month");
     printf("\n===============\n\n");
 
     // Print the Header of the Table
@@ -21,7 +21,7 @@ int main()
     printf("|Month\t\t|Days|\n");
     printf("+---------------+----+\n");
 
-    // Run a loop for print details and Ending the printing Table
+    // Run a Loop for Print Details and Ending the Printing Table
 
     for (int i = 0; i < 12; i++)
 
