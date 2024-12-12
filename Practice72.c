@@ -13,7 +13,7 @@ int main()
     // Header String Formatting
 
     printf("\n===========================");
-    printf("\nPrinting Stars in a pattern");
+    printf("\nPrinting Stars in a Pattern");
     printf("\n===========================\n\n");
 
     // Request Data from the user

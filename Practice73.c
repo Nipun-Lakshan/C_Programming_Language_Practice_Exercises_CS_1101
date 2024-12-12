@@ -13,7 +13,7 @@ int main()
     // Header String Formatting
 
     printf("\n===========================");
-    printf("\nPrinting Stars in a pattern");
+    printf("\nPrinting Stars in a Pattern");
     printf("\n===========================\n\n");
 
     // Request Data from the user
@@ -24,10 +24,10 @@ int main()
     // Print the Line using for Loop
 
     printf("\n");
-    
-    for (int i = 1; i <= number_of_stars; i++)
+
+    for (int i = number_of_stars; i >= 1; i--)
     {
-        for (int j = 1; j <= i; j++)
+        for (int j = i; j >= 1; j--)
         {
             printf("*");
         }
