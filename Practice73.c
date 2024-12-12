@@ -1,4 +1,4 @@
-// CS1101 - Day 04 - Exercise 05
+// CS1101 - Day 04 - Exercise 06
 
 #include <stdio.h>
 
