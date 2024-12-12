@@ -47,13 +47,13 @@ int main()
 
     // Requesting Meter Reading from Users with Reading Dates
 
-    printf("Enter the Meter Reading for This month           :- ");
+    printf("Enter the Meter Reading for This month           : ");
     scanf("%d", &this_month_meter_reading);
-    printf("Enter Date (YYYY/MM/DD) for This Month's Reading :- ");
+    printf("Enter Date (YYYY/MM/DD) for This Month's Reading : ");
     scanf("%d/%d/%d", &year1, &month1, &day1);
-    printf("Enter the Meter Reading for Last Month           :- ");
+    printf("Enter the Meter Reading for Last Month           : ");
     scanf("%d", &last_month_meter_reading);
-    printf("Enter Date (YYYY/MM/DD) for Last Month's Reading :- ");
+    printf("Enter Date (YYYY/MM/DD) for Last Month's Reading : ");
     scanf("%d/%d/%d", &year2, &month2, &day2);
     printf("\n");
 
@@ -116,8 +116,8 @@ int main()
         consumption_category = 0;
     }
 
-    printf("Total Units Consumed This Month                  :- %d\n", no_of_units_consumed_per_month);
-    printf("The Domestic Category for the CEB Bill           :- ");
+    printf("Total Units Consumed This Month                  : %d\n", no_of_units_consumed_per_month);
+    printf("The Domestic Category for the CEB Bill           : ");
 
     if (consumption_category == 1)
     {
@@ -259,21 +259,21 @@ int main()
 
     // Print the Bill Amount for the Month
 
-    printf("The Bill Amount for This Month                   :- Rs. %d.00\n", bill);
+    printf("The Bill Amount for This Month                   : Rs. %d.00\n", bill);
 
     // Print the Fixed Charge for the Month
 
-    printf("The Fixed Charge Amount for This Month           :- Rs. %.2f\n", fixed_charge_for_the_month);
+    printf("The Fixed Charge Amount for This Month           : Rs. %.2f\n", fixed_charge_for_the_month);
 
     // Calculate the Tax Amount
 
     tax = (float)(bill + fixed_charge_for_the_month) * 0.025641;
-    printf("The Tax Amount for This Month                    :- Rs. %.2f\n\n", tax);
+    printf("The Tax Amount for This Month                    : Rs. %.2f\n\n", tax);
 
     // Calculate the Total Bill Amount
 
     total_bill = (float)bill + (float)fixed_charge_for_the_month + tax;
-    printf("The Total Bill Amount for This Month             :- Rs. %.2f\n", total_bill);
+    printf("The Total Bill Amount for This Month             : Rs. %.2f\n", total_bill);
 
     return 0;
 }
