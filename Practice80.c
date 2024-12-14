@@ -1,6 +1,14 @@
-/* Week 05 - CS Videos - Practice 02 - Bubble Sort Algorithm */
+/* Week 05 - CS Videos - Practice 03 - Bubble Sort Algorithm */
 
 #include <stdio.h>
+
+/* Function Declaration */
+
+void ascending_order(long long array[], long long array_size);
+void print_sorted_array(long long array[], long long array_size);
+void descending_order(long long array[], long long array_size);
+
+/* Main Method */
 
 int main()
 
@@ -16,8 +24,6 @@ int main()
 
     long long array_size;
     long long i;
-    long long j;
-    long long max;
 
     // Request Data from User
 
@@ -69,6 +75,35 @@ label1:
 
     printf("\b\b]\n\n");
 
+    // Call the Ascending Order Method
+
+    ascending_order(array, array_size);
+
+    // Call the Sorted Array Print Method
+
+    print_sorted_array(array, array_size);
+    printf("\n");
+
+    // Call the Descending Order Method
+
+    descending_order(array, array_size);
+
+    // Call the Sorted Array Print Method
+
+    print_sorted_array(array, array_size);
+
+    return 0;
+}
+
+// Ascending Order Method
+
+void ascending_order(long long array[], long long array_size)
+{
+    // Variable Declaration
+
+    long long i;
+    long long j;
+
     // Sort the Array - Ascending Order
 
     for (i = 0; i < array_size; i++)
@@ -83,6 +118,16 @@ label1:
             }
         }
     }
+}
+
+// Sorted Array Printing Method
+
+void print_sorted_array(long long array[], long long array_size)
+{
+
+    // Variable Declaration
+
+    long long i;
 
     // Print the Sorted Array
 
@@ -93,7 +138,18 @@ label1:
         printf("%lld, ", array[i]);
     }
 
-    printf("\b\b]\n\n");
+    printf("\b\b]\n");
+}
+
+// Descending Order Method
+
+void descending_order(long long array[], long long array_size)
+{
+
+    // Variable Declaration
+
+    long long i;
+    long long j;
 
     // Sort the Array - Descending Order
 
@@ -109,17 +165,4 @@ label1:
             }
         }
     }
-
-    // Print the Sorted Array
-
-    printf("Sorted Array : [");
-
-    for (i = 0; i < array_size; i++)
-    {
-        printf("%lld, ", array[i]);
-    }
-
-    printf("\b\b]\n");
-
-    return 0;
 }
