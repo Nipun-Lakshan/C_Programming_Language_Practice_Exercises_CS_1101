@@ -33,7 +33,14 @@ label1:
 
     // Print The Star Pattern
 
-    // Start Here
+    for (i = number_of_stars; i > 0; i--)
+    {
+        for (j = 0; j < i; j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
 
     return 0;
 }
