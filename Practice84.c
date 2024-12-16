@@ -11,7 +11,7 @@ int main()
     printf("\nDraw a Line Using a Loop");
     printf("\n========================\n\n");
 
-    // Variable Decration
+    // Variable Declaration
 
     long long i;
     long long number_of_stars;
