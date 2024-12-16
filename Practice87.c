@@ -14,9 +14,7 @@ int main()
 
     // Variable Declaration
 
-    long long i;
-    long long j;
-    long long number_of_stars;
+    long long i, j, number_of_stars;
 
     // Request Data From User
 
