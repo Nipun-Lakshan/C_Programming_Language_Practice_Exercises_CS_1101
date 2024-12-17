@@ -1,4 +1,4 @@
-// CS 1101 - Day 02 - Interactive Videos - Exercises
+// CS 1101 - Day 02 - Interactive Videos - Exercises Set 01
 
 #include <stdio.h>
 
