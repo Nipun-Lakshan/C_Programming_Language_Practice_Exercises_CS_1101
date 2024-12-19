@@ -1,16 +1,17 @@
-// CS1101 - Day 05 - Exercise 06
+// CS1101 - Day 05 - Exercise 07
 
 #include <stdio.h>
 
 int main()
 
 {
+
     // Variable Declaration
 
     int n, i;
-    int user_input;
+    int max_position;
     int max;
-    int position;
+    int temp;
 
     // Array Declaration
 
@@ -29,29 +30,32 @@ int main()
     }
     printf("\b\b \n");
 
-    // Find the Maximum Element
+    // Find the Maximum Element Position
 
-    max = myArray[0];
+    max_position = 0;
     for (i = 1; i < n; i++)
     {
         if (max < myArray[i])
         {
             max = myArray[i];
+            max_position = i;
         }
     }
 
-    // Search The Position of Max
+    // Swap the Largest Element to Last Element
 
+    temp = myArray[(n - 1)];
+    myArray[n-1] = myArray[max_position];
+    myArray[max_position] = temp;
+
+    // Print the Array
+
+    printf("\n");
     for (i = 0; i < n; i++)
     {
-        if (max == myArray[i])
-        {
-            position = i;
-            break;
-        }
+        printf("%d, ", myArray[i]);
     }
-
-    printf("The Position of the Largest Value of %d at the Array is %d.\n",max, (position + 1));
+    printf("\b\b \n");
 
     return 0;
 }
