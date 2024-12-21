@@ -8,15 +8,12 @@ int main()
 
     // Variable Declaration
 
-    long long number_of_elements;
-    long long i;
-    long long max;
-    long long max_index = 0;
+    
 
     // Header String Formatting
 
     printf("\n====================================================");
-    printf("\nFinding the Largest Element in a Given Integer Array");
+    printf("\n");
     printf("\n====================================================\n\n");
 
     // Request Array Size From User
@@ -64,22 +61,7 @@ label1:
     }
     printf("]\n\n");
 
-    // Find the Largest Element of an Array
-
-    max = array[0];
-    for (i = 1; i < number_of_elements; i++)
-    {
-        if (max < array[i])
-        {
-            max = array[i];
-            max_index = i;
-        }
-    }
-
-    // Print the Result
-
-    printf("The Largest Element of the Array : %lld\n", max);
-    printf("The Largest Element's Position   : %lld\n", (max_index + 1));
+    //
 
     return 0;
 }
