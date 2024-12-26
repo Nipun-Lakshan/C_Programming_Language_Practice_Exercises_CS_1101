@@ -1,4 +1,4 @@
-/* Linear Search - Finding the Largest Element in a Given Integer Array */
+// CS 1101 - Day 05 - Exercises - Counting Occurrences of an Element in an Array
 
 #include <stdio.h>
 
@@ -8,60 +8,53 @@ int main()
 
     // Variable Declaration
 
-    
+    int n, i, user_input;
+    int count = 0;
 
-    // Header String Formatting
+    // Array Declaration
 
-    printf("\n====================================================");
-    printf("\n");
-    printf("\n====================================================\n\n");
+    int myArray[] = {3, 8, 5, 12, 4, 17, 22, 12, 16};
 
-    // Request Array Size From User
+    // Calculate Array Size
 
-label1:
-    printf("Enter the number of elements in the array : ");
-    scanf("%lld", &number_of_elements);
-
-    // Validate the Array Size Input
-
-    if (number_of_elements < 1)
-    {
-        printf("Invalid input! Please enter an array size greater than 1.\n\n");
-        goto label1;
-    }
-    printf("\n");
-
-    // Declaration of the Array
-
-    long long array[number_of_elements];
-
-    // Request the Data From User for the Array
-
-    for (i = 0; i < number_of_elements; i++)
-    {
-        if (i < 9)
-        {
-            printf("Enter number 0%lld : ", (i + 1));
-        }
-        else if (i < 99)
-        {
-            printf("Enter number %lld : ", (i + 1));
-        }
-        scanf("%lld", &array[i]);
-    }
-    printf("\n");
+    n = sizeof(myArray) / sizeof(myArray[0]);
 
     // Print the Array
 
-    printf("Array : [");
-    for (i = 0; i < number_of_elements; i++)
+    printf("\nArray Elements : ");
+    for (i = 0; i < n; i++)
     {
-        printf("%lld", array[i]);
-        (i == (number_of_elements - 1)) ? printf("") : printf(", ");
+        printf("%d", myArray[i]);
+        ((n - 1) != i) ? printf(", ") : printf("");
     }
-    printf("]\n\n");
+    printf("\n\n");
 
-    //
+    // Request a Input from User
+
+    printf("Enter a value to count its occurrences in the array : ");
+    scanf("%d", &user_input);
+
+    // Search an Element
+
+    for (i = 0; i < n; i++)
+    {
+        if (user_input == myArray[i])
+        {
+            count++;
+            printf("Value %d is available at the position %d.\n", user_input, (i + 1));
+        }
+    }
+
+    // Print the Search Element
+
+    if (count > 0)
+    {
+        printf("Value %d occurs %d times in the array.\n", user_input, count);
+    }
+    else
+    {
+        printf("Value %d is not available in the array.\n", user_input);
+    }
 
     return 0;
 }
