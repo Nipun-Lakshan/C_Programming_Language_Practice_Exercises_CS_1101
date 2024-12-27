@@ -1,4 +1,4 @@
-// CS 1101 - Day 05 - Move the Maximum Value to the End
+// CS 1101 - Day 05 - Exercises - Move the Maximum Value to the End
 
 #include <stdio.h>
 
