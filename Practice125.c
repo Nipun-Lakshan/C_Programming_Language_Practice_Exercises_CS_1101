@@ -1,4 +1,4 @@
-// CS 1101 - Day 06 - Exercise 07 - Finding PI - Part 02
+// CS 1101 - Day 06 - Exercise 08 - Finding PI - Part 02
 
 #include <stdio.h>
 #include <math.h>
