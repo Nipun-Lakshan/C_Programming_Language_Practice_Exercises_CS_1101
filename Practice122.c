@@ -1,4 +1,4 @@
-// CS1101 - Day 06 - Exercise 05 - LCG Algorithm
+// CS1101 - Day 06 - Exercise 05 - rand() Function
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,15 +7,18 @@
 int main()
 {
     // Variable Declaration
-    int i, a = 5, b = 13, x = 20, MAX_VAL = 201;
+    int i, x;
 
-    // LCG Algorithm
-    x = time(NULL); // Current Time in Seconds
+    // Seed Generation
+    srand(time(NULL)); // Current Time in Seconds used as seed
+
+    printf("\nMaximum Random Number : %d\n", RAND_MAX); // RAND_MAX will give maximum number will it generate
+
+    // Printing 10 random integers based on current time
     for (i = 0; i < 10; i++)
     {
-        x = (a * x + b) % MAX_VAL;
-        printf("\n%d", (x - 100)); // Generate Numbers From -100 to 100.
-        printf("\n");
+        x = rand(); // Generates a random number
+        printf("%d\n", x);
     }
 
     return 0;
