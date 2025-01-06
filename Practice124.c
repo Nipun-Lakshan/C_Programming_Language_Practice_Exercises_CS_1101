@@ -11,10 +11,7 @@ int main()
     printf("\n===================================\n\n");
 
     // Variable Declaration
-    float x1;
-    float y1;
-    float x2 = -1;
-    float y2 = 2;
+    float x1, y1, x2 = -1, y2 = 2;
     double distance;
 
     // Requesting data from the user
