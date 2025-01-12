@@ -1,7 +1,9 @@
 // CS 1101 - Building a Bridge - Code 01
 
-// Libraries & Constants
+// Libraries
 #include <stdio.h>
+
+// Constants
 #define BRIDGE_KM_COST 60 // Building Cost of Bridge For 1 Km in LKR Million
 #define ROAD_KM_COST 40   // Building Cost of Road For 1 Km in LKR Million
 #define WATER_WIDTH 6     // Width Of The Water
@@ -29,9 +31,9 @@ int main()
         printf("Invalid Input! Please enter a numerical value.\n");
         return 1;
     }
-    if (rLen <= 0)
+    if (rLen < 0 || rLen > MAX_ROAD_LEN)
     {
-        printf("Invalid Input! Please enter a value which is greater than 1.\n");
+        printf("Invalid Input! Please enter a value which is in [0, 8] range.\n");
         return 1;
     }
 
@@ -41,9 +43,9 @@ int main()
         printf("Invalid Input! Please enter a numerical value.\n");
         return 1;
     }
-    if (bLen <= 0)
+    if (bLen < WATER_WIDTH || bLen > 10)
     {
-        printf("Invalid Input! Please enter a value which is greater than 1.\n");
+        printf("Invalid Input! Please enter a value which is in [6, 10] range.\n");
         return 1;
     }
 

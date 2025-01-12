@@ -1,8 +1,10 @@
 // CS 1101 - Building a Bridge - Code 02
 
-// Libraries & Constants
+// Libraries
 #include <stdio.h>
 #include <math.h>
+
+// Constants
 #define BRIDGE_KM_COST 60 // Building Cost of Bridge For 1 Km in LKR Million
 #define ROAD_KM_COST 40   // Building Cost of Road For 1 Km in LKR Million
 #define WATER_WIDTH 6     // Width Of The Water
@@ -16,9 +18,8 @@ void printDetails(double x, double bLen);
 int main()
 {
     // Variable Declaration
-    double x;    // Case
+    double x;    // Point On The Road That Represents X = 0 to X = 8
     double bLen; // Length on Water
-    double rLen; // Length on Road
 
     // Header String Formatting
     printf("\n=================");
@@ -34,7 +35,7 @@ int main()
     }
     if (x < 0 || x > MAX_ROAD_LEN)
     {
-        printf("Invalid Input! Please enter a value which is greater than 1.\n");
+        printf("Invalid Input! Please enter a value which is in [0, 8] range.\n");
         return 1;
     }
 
