@@ -17,7 +17,7 @@ int main()
     long long i;                       // Loop's Index
     long count = 0;                    // Points Inside The Circle
     double PI_Value;                   // Estimated Value
-    long long total_points = 100000000; // Total number of random points
+    long long total_points = 10000000; // Total number of random points
 
     // Generate Random Numbers and Print it
     srand(time(NULL)); // Current Time in Seconds as the Seed
